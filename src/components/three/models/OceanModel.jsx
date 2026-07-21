@@ -10,6 +10,8 @@ export default function OceanModel({
   targetSize = 2,
   playAnimation = true,
   outlined = false,
+  glowColor = null,
+  glowIntensity = 0.8,
   onClick,
   ...groupProps
 }) {
@@ -58,17 +60,19 @@ export default function OceanModel({
         if (outlined) {
           mat.emissive.set('#22d3ee')
           mat.emissiveIntensity = 0.55
+        } else if (glowColor) {
+          mat.emissive.set(glowColor)
+          mat.emissiveIntensity = glowIntensity
         } else {
           mat.emissive.set('#000000')
           mat.emissiveIntensity = 0
         }
       })
     })
-  }, [clone, outlined])
+  }, [clone, outlined, glowColor, glowIntensity])
 
   return (
     <group {...groupProps}>
-      {/* Resize fits model into a 1-unit box; outer scale = final world size */}
       <group scale={targetSize}>
         <Resize precise>
           <Center>

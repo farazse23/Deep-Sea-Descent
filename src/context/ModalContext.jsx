@@ -25,6 +25,7 @@ export function ModalProvider({ children }) {
       title: payload.title ?? 'Information',
       body: payload.body ?? '',
       imageSrc: payload.imageSrc ?? null,
+      chart: payload.chart ?? null,
     })
   }, [])
 

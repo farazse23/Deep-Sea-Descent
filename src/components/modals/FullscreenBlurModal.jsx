@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import ModalBody from './ModalBody'
+import DielMigrationGraph from './DielMigrationGraph'
 
 /** Section 2 — fullscreen blurred modal. */
-export default function FullscreenBlurModal({ title, body, onClose }) {
+export default function FullscreenBlurModal({ title, body, chart, onClose }) {
   return (
     <motion.div
       role="dialog"
@@ -12,7 +13,7 @@ export default function FullscreenBlurModal({ title, body, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="pointer-events-auto fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-xl md:p-10"
+      className="pointer-events-auto fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/75 p-4 backdrop-blur-xl md:p-10"
     >
       <motion.div
         initial={{ scale: 0.94, opacity: 0 }}
@@ -38,6 +39,7 @@ export default function FullscreenBlurModal({ title, body, onClose }) {
         </div>
         <div className="overflow-y-auto px-6 py-5 text-base leading-relaxed text-white/85">
           <ModalBody body={body} />
+          {chart === 'diel-migration' ? <DielMigrationGraph /> : null}
         </div>
       </motion.div>
     </motion.div>

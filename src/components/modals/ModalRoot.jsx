@@ -40,6 +40,7 @@ function ModalSwitch({ modal, onClose }) {
     title: modal.title ?? 'Information',
     body: modal.body ?? null,
     imageSrc: modal.imageSrc,
+    chart: modal.chart,
     onClose,
   }
 

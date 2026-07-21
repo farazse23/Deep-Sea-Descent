@@ -5,6 +5,7 @@ import * as THREE from 'three'
 /**
  * Moves children along a looping 3D path (swim circuit) within a zone.
  * Faces the travel direction; yawOffset fixes models that face +Z by default.
+ * When lockHorizon is true (default), pitch is flattened so models stay level.
  */
 export default function SwimPath({
   points,
@@ -12,6 +13,7 @@ export default function SwimPath({
   phase = 0,
   bobAmount = 0.15,
   yawOffset = Math.PI,
+  lockHorizon = true,
   children,
 }) {
   const group = useRef(null)
@@ -40,7 +42,9 @@ export default function SwimPath({
 
     group.current.position.copy(pos)
     lookTarget.copy(look)
-    lookTarget.y = pos.y
+    if (lockHorizon) {
+      lookTarget.y = pos.y
+    }
     group.current.up.copy(up)
     group.current.lookAt(lookTarget)
     group.current.rotateY(yawOffset)

@@ -395,7 +395,9 @@ Folder: `src/assets/models/zone-epipelagic/`
 
 ### Files to create
 
-- [ ] `src/components/three/zones/MesopelagicZone.jsx`
+- [x] `src/components/three/zones/MesopelagicZone.jsx`
+- [x] `src/components/modals/DielMigrationGraph.jsx`
+- [x] `src/components/modals/JellyfishModalBridge.jsx`
 
 ### Assets to place BEFORE coding
 
@@ -404,32 +406,32 @@ Folder: `src/assets/models/zone-mesopelagic/`
 - [x] `blue-whale-optimized.glb`
 - [x] `glowing-jellyfish-optimized.glb`
 - [x] `glowing-fish-optimized.glb` — use both glowing models
-- [ ] Graph built in code (no SVG file required)
-- [ ] Static submarine (horizontal, center) ← `../zone-epipelagic/submarine.glb`
+- [x] Graph built in code (no SVG file required)
+- [x] Static submarine (horizontal, center) ← `../zone-epipelagic/submarine.glb`
 
 ### Atmosphere
 
-- [ ] Sun rays disappear (vs Section 1)
-- [ ] Gradient: `from-blue-800` → `to-indigo-950`
+- [x] Sun rays disappear (vs Section 1)
+- [x] Gradient: `from-blue-800` → `to-indigo-950` *(DescentLighting darker meso stop)*
 
 ### 3D models
 
-- [ ] Blue Whale ← `blue-whale.glb`
-- [ ] Glowing Jellyfish ← `glowing-jellyfish.glb`
-- [ ] Glowing Fish ← `glowing-fish.glb` (use both)
+- [x] Blue Whale ← `blue-whale-optimized.glb`
+- [x] Glowing Jellyfish ← `glowing-jellyfish-optimized.glb`
+- [x] Glowing Fish ← `glowing-fish-optimized.glb` (use both)
 
 ### Scroll transition behavior
 
-- [ ] Ambient lighting fades completely
-- [ ] Jellyfish **emissive glow** becomes the **only** light source
+- [x] Ambient lighting fades completely
+- [x] Jellyfish **emissive glow** becomes the **only** light source *(plus biolum point lights)*
 
 ### Click / modal
 
-- [ ] Click jellyfish → fullscreen **blurred** modal (`FullscreenBlurModal.jsx`)
-- [ ] Interactive graph: **Diel Vertical Migration**
-- [ ] Explanation of nighttime migration behavior
+- [x] Click jellyfish → fullscreen **blurred** modal (`FullscreenBlurModal.jsx`)
+- [x] Interactive graph: **Diel Vertical Migration**
+- [x] Explanation of nighttime migration behavior
 
-**Exit criteria:** Light dies into jellyfish-only glow; jellyfish opens migration graph modal.
+**Exit criteria:** Light dies into jellyfish-only glow; jellyfish opens migration graph modal. ✅
 
 ---
 
@@ -648,4 +650,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 7 — Mesopelagic zone (whale + both glowing models + migration modal).
+**Next up:** STEP 8 — Bathypelagic zone (flashlight + anglerfish / squid).

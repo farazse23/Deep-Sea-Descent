@@ -14,7 +14,7 @@ When a file is ready, mark it `[x]`.
 - [ ] `coral-reef-optimized.glb` — removed from scene (file can stay unused)
 - [x] `sea-turtle-optimized.glb`
 - [x] `dolphin-optimized.glb`
-- [x] `submarine.glb` — **not in epipelagic**; show static (horizontal, center) in next dark zone (STEP 7+)
+- [x] `submarine.glb` — static horizontal center in mesopelagic (STEP 7)
 - [ ] ~~`marine-buoy-optimized.glb`~~ — replaced by `submarine.glb`
 
 ### `models/zone-mesopelagic/` — STEP 7
