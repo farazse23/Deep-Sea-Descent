@@ -1,3 +1,4 @@
+import DepthHud from './components/hud/DepthHud'
 import ExperienceCanvas from './components/layout/ExperienceCanvas'
 import ScrollProgressDebug from './components/layout/ScrollProgressDebug'
 import ScrollScaffold from './components/layout/ScrollScaffold'
@@ -8,6 +9,7 @@ export default function App() {
     <ScrollProgressProvider>
       <ExperienceCanvas />
       <ScrollScaffold />
+      <DepthHud />
       <ScrollProgressDebug />
     </ScrollProgressProvider>
   )

@@ -279,9 +279,9 @@ Build the empty structure only — no fancy models yet.
 
 ### Files to create
 
-- [ ] `src/components/hud/DepthHud.jsx`
-- [ ] `src/utils/scrollToZone.js`
-- [ ] Extend `src/data/zoneMeta.js` with HUD meter ranges
+- [x] `src/components/hud/DepthHud.jsx`
+- [x] `src/utils/scrollToZone.js`
+- [x] Extend `src/data/zoneMeta.js` with HUD meter ranges
 
 ### Assets needed
 
@@ -289,24 +289,24 @@ Build the empty structure only — no fancy models yet.
 
 ### Layout / style
 
-- [ ] Fixed futuristic transparent **glass** sidebar on the **right**
-- [ ] Position classes: `fixed right-6 top-1/2 -translate-y-1/2 z-40`
-- [ ] Uses project fonts (display / mono for readouts)
+- [x] Fixed futuristic transparent **glass** sidebar on the **right**
+- [x] Position classes: `fixed right-6 top-1/2 -translate-y-1/2 z-40`
+- [x] Uses project fonts (display / mono for readouts)
 
 ### Visual elements (driven by scroll progress)
 
-- [ ] Vertical progress line
-- [ ] Real-time **depth meter**: `0m → 11,000m`
-- [ ] **Temperature** indicator: `25°C` (surface) → `1°C` (abyss)
-- [ ] **Pressure** gauge: `1 ATM` → `1,100 ATM`
-- [ ] Zone labels for all 5 zones
+- [x] Vertical progress line
+- [x] Real-time **depth meter**: `0m → 11,000m`
+- [x] **Temperature** indicator: `25°C` (surface) → `1°C` (abyss)
+- [x] **Pressure** gauge: `1 ATM` → `1,100 ATM`
+- [x] Zone labels for all 5 zones
 
 ### HUD interaction
 
-- [ ] Clicking any zone label smoothly scrolls to that depth
-- [ ] Use GSAP **ScrollTo** plugin
+- [x] Clicking any zone label smoothly scrolls to that depth
+- [x] Use GSAP **ScrollTo** plugin
 
-**Exit criteria:** HUD stays pinned; meters update with scroll; zone clicks jump to the correct section.
+**Exit criteria:** HUD stays pinned; meters update with scroll; zone clicks jump to the correct section. ✅
 
 ---
 
@@ -646,4 +646,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 4 — Pinned HUD (depth / temp / pressure + zone ScrollTo).
+**Next up:** STEP 5 — Shared Framer Motion modal system + scroll lock.

@@ -11,11 +11,38 @@ export function cameraYFromProgress(progress) {
 }
 
 /**
- * Approximate ocean depth in meters (0 → 11,000).
- * Used later by the HUD; handy for lighting too.
+ * Approximate ocean depth in meters using zone breakpoints
+ * (not a flat 0→11000 line — matches blueprint zone ranges).
  */
 export function depthMetersFromProgress(progress) {
-  return clamp01(progress) * 11000
+  const t = clamp01(progress)
+  const stops = [
+    { t: 0, m: 0 },
+    { t: 0.2, m: 200 },
+    { t: 0.4, m: 1000 },
+    { t: 0.6, m: 4000 },
+    { t: 0.8, m: 6000 },
+    { t: 1, m: 11000 },
+  ]
+
+  let i = 0
+  while (i < stops.length - 1 && t > stops[i + 1].t) i += 1
+
+  const a = stops[i]
+  const b = stops[Math.min(i + 1, stops.length - 1)]
+  const span = b.t - a.t || 1
+  const local = (t - a.t) / span
+  return lerp(a.m, b.m, local)
+}
+
+/** Temperature °C: 25°C surface → 1°C abyss. */
+export function temperatureFromProgress(progress) {
+  return lerp(25, 1, clamp01(progress))
+}
+
+/** Pressure ATM: 1 → 1,100. */
+export function pressureFromProgress(progress) {
+  return lerp(1, 1100, clamp01(progress))
 }
 
 /** Zone-aware lighting + background for the current progress. */
