@@ -11,15 +11,21 @@ export const MODAL_TYPES = {
 }
 
 /**
- * Shared modal open/close state for all zone panels.
- * openModal({ type, title, body, imageSrc, ... })
+ * Shared modal open/close state.
+ * Payload must be serializable-ish: use string/string[] for body, not JSX.
+ * openModal({ type, title, body, imageSrc })
  */
 export function ModalProvider({ children }) {
   const [modal, setModal] = useState(null)
 
   const openModal = useCallback((payload) => {
     if (!payload?.type) return
-    setModal(payload)
+    setModal({
+      type: payload.type,
+      title: payload.title ?? 'Information',
+      body: payload.body ?? '',
+      imageSrc: payload.imageSrc ?? null,
+    })
   }, [])
 
   const closeModal = useCallback(() => {

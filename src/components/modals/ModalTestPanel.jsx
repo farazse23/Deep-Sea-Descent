@@ -1,4 +1,5 @@
 import { MODAL_TYPES, useModal } from '../../context/ModalContext'
+import coralWarmingImg from '../../assets/images/coral-warming.jpg?url'
 
 /**
  * Temporary STEP 5 tester — remove after zone click targets exist.
@@ -10,8 +11,12 @@ export default function ModalTestPanel() {
     {
       label: 'Left card',
       type: MODAL_TYPES.LEFT_CARD,
-      title: 'Coral Warming',
-      body: 'Placeholder — Section 1 left card. Warming oceans threaten coral reefs.',
+      title: 'Warming Oceans',
+      imageSrc: coralWarmingImg,
+      body: [
+        'In the sunlit epipelagic zone, coral reefs are among the most productive — and vulnerable — ecosystems on Earth.',
+        'As oceans warm, corals bleach and reefs collapse, threatening turtles, fish, and coastal communities.',
+      ],
     },
     {
       label: 'Fullscreen',
@@ -52,7 +57,8 @@ export default function ModalTestPanel() {
             openModal({
               type: sample.type,
               title: sample.title,
-              body: <p>{sample.body}</p>,
+              body: sample.body,
+              imageSrc: sample.imageSrc,
             })
           }
           className="rounded border border-cyan-400/30 bg-cyan-950/40 px-2 py-1 font-mono text-[10px] tracking-wide text-cyan-100 hover:border-cyan-300/60"

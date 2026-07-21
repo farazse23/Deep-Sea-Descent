@@ -350,41 +350,42 @@ Build the empty structure only — no fancy models yet.
 
 ### Files to create
 
-- [ ] `src/components/three/zones/EpipelagicZone.jsx`
-- [ ] `src/components/three/effects/GodRays.jsx`
-- [ ] `src/components/three/effects/BubbleTrail.jsx`
+- [x] `src/components/three/zones/EpipelagicZone.jsx`
+- [x] `src/components/three/effects/GodRays.jsx`
+- [x] `src/components/three/effects/BubbleTrail.jsx`
+- [x] `src/components/three/models/OceanModel.jsx` *(shared GLB loader)*
 
 ### Assets to place BEFORE coding
 
 Folder: `src/assets/models/zone-epipelagic/`
 
-- [x] `marine-buoy.glb`
-- [x] `coral-reef.glb`
-- [x] `sea-turtle.glb`
-- [x] `dolphin.glb`
+- [x] `marine-buoy-optimized.glb`
+- [x] `coral-reef-optimized.glb`
+- [x] `sea-turtle-optimized.glb`
+- [x] `dolphin-optimized.glb`
 - [x] `src/assets/images/coral-warming.jpg`
 
 ### Atmosphere
 
-- [ ] Bright turquoise gradient: `from-cyan-400` → `to-blue-600`
-- [ ] Animated underwater **god rays**
+- [x] Bright turquoise gradient: `from-cyan-400` → `to-blue-600` *(via DescentLighting at progress ~0)*
+- [x] Animated underwater **god rays**
 
 ### 3D models
 
-- [ ] Floating marine buoy ← `marine-buoy.glb`
-- [ ] Coral reef base ← `coral-reef.glb`
-- [ ] Dolphins **or** sea turtles ← `sea-turtle.glb` / `dolphin.glb`
+- [x] Floating marine buoy ← `marine-buoy-optimized.glb`
+- [x] Coral reef base ← `coral-reef-optimized.glb`
+- [x] Dolphins **or** sea turtles ← `sea-turtle-optimized.glb` / `dolphin-optimized.glb`
 
 ### Interactions
 
-- [ ] Hover / mouse movement: trailing ripple of **glowing bubbles**
-- [ ] Click sea turtle:
-  - [ ] Highlight with **3D outline shader**
-  - [ ] Pause scrolling
-  - [ ] Open Framer Motion **card from the left** (`LeftInfoCard.jsx`)
-  - [ ] Content: how warming oceans threaten coral reefs
+- [x] Hover / mouse movement: trailing ripple of **glowing bubbles**
+- [x] Click sea turtle:
+  - [x] Highlight with **3D outline shader**
+  - [x] Pause scrolling
+  - [x] Open Framer Motion **card from the left** (`LeftInfoCard.jsx`)
+  - [x] Content: how warming oceans threaten coral reefs
 
-**Exit criteria:** Zone feels bright/surface; bubbles work; turtle click → outline + left modal + scroll pause.
+**Exit criteria:** Zone feels bright/surface; bubbles work; turtle click → outline + left modal + scroll pause. ✅
 
 ---
 
@@ -646,4 +647,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 6 — Epipelagic zone (models, god rays, bubbles, turtle modal).
+**Next up:** STEP 7 — Mesopelagic zone (whale + both glowing models + migration modal).

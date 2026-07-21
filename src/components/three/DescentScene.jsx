@@ -1,18 +1,24 @@
+import { Suspense } from 'react'
 import DescentCamera from './DescentCamera'
 import DescentLighting from './DescentLighting'
+import EpipelagicZone from './zones/EpipelagicZone'
 import { CAMERA_END_Y, CAMERA_START_Y } from '../../utils/depthFromProgress'
 
 /**
- * Root 3D scene — camera + lighting synced to scroll (STEP 3).
- * Depth markers make the descent visible before real zone models land.
+ * Root 3D scene — scroll-synced camera/lights + zone content.
  */
 export default function DescentScene() {
-  const markerYs = [0, -10, -20, -30, -40]
+  // Keep lower-zone markers until those steps land
+  const markerYs = [-10, -20, -30, -40]
 
   return (
     <>
       <DescentCamera />
       <DescentLighting />
+
+      <Suspense fallback={null}>
+        <EpipelagicZone />
+      </Suspense>
 
       {markerYs.map((y, index) => (
         <mesh key={y} position={[0, y, 0]}>
@@ -25,13 +31,14 @@ export default function DescentScene() {
         </mesh>
       ))}
 
-      {/* Vertical guide so depth travel is obvious */}
       <mesh position={[0, (CAMERA_START_Y + CAMERA_END_Y) / 2, -2]}>
-        <boxGeometry args={[0.08, Math.abs(CAMERA_END_Y - CAMERA_START_Y), 0.08]} />
-        <meshStandardMaterial color="#67e8f9" transparent opacity={0.35} />
+        <boxGeometry
+          args={[0.08, Math.abs(CAMERA_END_Y - CAMERA_START_Y), 0.08]}
+        />
+        <meshStandardMaterial color="#67e8f9" transparent opacity={0.25} />
       </mesh>
     </>
   )
 }
 
-const MARKER_COLORS = ['#22d3ee', '#818cf8', '#525252', '#ea580c', '#7c3aed']
+const MARKER_COLORS = ['#818cf8', '#525252', '#ea580c', '#7c3aed']

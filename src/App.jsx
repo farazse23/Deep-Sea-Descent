@@ -4,6 +4,7 @@ import ScrollProgressDebug from './components/layout/ScrollProgressDebug'
 import ScrollScaffold from './components/layout/ScrollScaffold'
 import ModalRoot from './components/modals/ModalRoot'
 import ModalTestPanel from './components/modals/ModalTestPanel'
+import TurtleModalBridge from './components/modals/TurtleModalBridge'
 import { ModalProvider } from './context/ModalContext'
 import { ScrollProgressProvider } from './context/ScrollProgressContext'
 
@@ -15,6 +16,7 @@ export default function App() {
         <ScrollScaffold />
         <DepthHud />
         <ModalRoot />
+        <TurtleModalBridge />
         <ModalTestPanel />
         <ScrollProgressDebug />
       </ModalProvider>

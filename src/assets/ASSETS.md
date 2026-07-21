@@ -11,10 +11,11 @@ When a file is ready, mark it `[x]`.
 
 ### `models/zone-epipelagic/` — STEP 6
 
-- [x] `marine-buoy-optimized.glb`
-- [x] `coral-reef-optimized.glb`
+- [ ] `coral-reef-optimized.glb` — removed from scene (file can stay unused)
 - [x] `sea-turtle-optimized.glb`
 - [x] `dolphin-optimized.glb`
+- [x] `submarine.glb` — patrols epipelagic; later descends with scroll
+- [ ] ~~`marine-buoy-optimized.glb`~~ — replaced by `submarine.glb`
 
 ### `models/zone-mesopelagic/` — STEP 7
 
@@ -56,3 +57,5 @@ When a file is ready, mark it `[x]`.
 - Always load the `*-optimized.glb` filenames from these folders.
 - Mesopelagic uses **both** jellyfish and glowing-fish models.
 - Full file/component naming lives in `/DEVELOPMENT-STEPS.md`.
+- **Performance tip:** keep GLBs as small as practical. Heavy files (multi‑MB) can hide lighter models until they finish loading, and huge JPGs (e.g. 7MB) slow modals. Aim for reef/creature GLBs under ~1–2MB when possible; compress modal images under ~300KB.
+- **Submarine:** `models/zone-epipelagic/submarine.glb` patrols the epipelagic section for now; later it will descend with the user on scroll.
