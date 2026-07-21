@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-display: "Orbitron", sans-serif;
+  --font-sans: "Rajdhani", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+}
