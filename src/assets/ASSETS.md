@@ -1,8 +1,7 @@
 # Assets checklist
 
 Drop files into these exact paths before building the matching zone step.  
-Preferred 3D format: **`.glb`** (or `.gltf`).  
-Keep filenames **kebab-case** as listed.
+Preferred 3D format: **`.glb`**. Images may be **`.jpg`** or **`.png`**.
 
 When a file is ready, mark it `[x]`.
 
@@ -12,49 +11,49 @@ When a file is ready, mark it `[x]`.
 
 ### `models/zone-epipelagic/` — STEP 6
 
-- [ ] `marine-buoy.glb` — floating marine buoy
-- [ ] `coral-reef.glb` — coral reef base
-- [ ] `sea-turtle.glb` — clickable turtle (outline + modal)
-- [ ] `dolphin.glb` — optional extra life
+- [x] `marine-buoy.glb` — floating marine buoy
+- [x] `coral-reef.glb` — coral reef base
+- [x] `sea-turtle.glb` — clickable turtle (outline + modal)
+- [x] `dolphin.glb` — extra life
 
 ### `models/zone-mesopelagic/` — STEP 7
 
-- [ ] `blue-whale.glb` — blue whale
-- [ ] `glowing-jellyfish.glb` — emissive light + click target
+- [x] `blue-whale.glb` — blue whale
+- [x] `glowing-jellyfish.glb` — emissive light + click target
+- [x] `glowing-fish.glb` — second glowing creature (use both)
 
 ### `models/zone-bathypelagic/` — STEP 8
 
-- [ ] `anglerfish.glb` — flashlight find + side panel
-- [ ] `giant-squid.glb` — atmosphere creature
+- [x] `anglerfish.glb` — flashlight find + side panel
+- [x] `giant-squid.glb` — atmosphere creature
 
 ### `models/zone-abyssopelagic/` — STEP 9
 
-- [ ] `hydrothermal-vent.glb` — vent + schematic click
-- [ ] `tripod-fish.glb` — zone creature
+- [x] `hydrothermal-vent.glb` — vent + schematic click
+- [x] `tripod-fish.glb` — zone creature
 
 > Smoke = particle code (`SmokePlume.jsx`), not a model.
 
 ### `models/zone-hadalpelagic/` — STEP 10
 
-- [ ] `amphipod.glb` — transparent amphipods
-- [ ] `plastic-bag.glb` — climax click + conservation modal
+- [x] `amphipod.glb` — transparent amphipods
+- [x] `plastic-bag.glb` — climax click + conservation modal
 
 ---
 
 ## Images — `images/`
 
-- [ ] `coral-warming.jpg` — STEP 6 modal art (optional)
-- [ ] `diel-vertical-migration.svg` — STEP 7 graph
-- [ ] `vent-chemosynthesis-schematic.svg` — STEP 9 schematic
-- [ ] `microplastics-data.png` — STEP 10
-- [ ] `mariana-pollution.png` — STEP 10
-- [ ] `conservation-cta.png` — STEP 10 (optional)
+- [x] `coral-warming.jpg` — STEP 6 modal art
+- [x] `microplastic-data.jpg` — STEP 10
+- [x] `mariana-pollution.jpg` — STEP 10
+- [ ] `conservation-cta.png` / `.jpg` — STEP 10 (optional — skip OK)
+- [ ] ~~`diel-vertical-migration.svg`~~ — **not required**; build graph in code (STEP 7)
+- [ ] ~~`vent-chemosynthesis-schematic.svg`~~ — **not required**; build schematic in code (STEP 9)
 
 ---
 
 ## Notes
 
-- Until a real `.glb` is ready, we can use temporary primitives (box/sphere) with the **same component name**, then swap the path.
-- Do not put models in random folders — always under the matching `zone-*` directory.
+- Mesopelagic uses **both** `glowing-jellyfish.glb` and `glowing-fish.glb`.
 - Full file/component naming lives in `/DEVELOPMENT-STEPS.md`.
-- God rays, fractures, HUD glass, and smoke are done in **code/shaders**, not texture files.
+- God rays, fractures, HUD glass, and smoke are done in **code/shaders**.

@@ -126,6 +126,7 @@ Prefer **`.glb` / `.gltf`** for models. Keep filenames exactly as listed when po
 |---------------|----------|------|
 | `blue-whale.glb` | Blue whale | 7 |
 | `glowing-jellyfish.glb` | Emissive light source + click target | 7 |
+| `glowing-fish.glb` | Second glowing creature — use both | 7 |
 
 ### Zone 3 — Bathypelagic → `src/assets/models/zone-bathypelagic/`
 
@@ -154,12 +155,12 @@ Prefer **`.glb` / `.gltf`** for models. Keep filenames exactly as listed when po
 
 | File to place | Used for | Step |
 |---------------|----------|------|
-| `coral-warming.jpg` *(or `.png`)* | Section 1 left card art (optional) | 6 |
-| `diel-vertical-migration.svg` *(or `.png`)* | Section 2 interactive graph asset / reference | 7 |
-| `vent-chemosynthesis-schematic.svg` | Section 4 schematic panel | 9 |
-| `microplastics-data.png` | Section 5 science visuals | 10 |
-| `mariana-pollution.png` | Section 5 pollution visual | 10 |
-| `conservation-cta.png` *(optional)* | Final CTA art | 10 |
+| `coral-warming.jpg` | Section 1 left card art | 6 |
+| *(built in code)* | Section 2 Diel Vertical Migration graph | 7 |
+| *(built in code)* | Section 4 chemosynthesis schematic | 9 |
+| `microplastic-data.jpg` | Section 5 science visuals | 10 |
+| `mariana-pollution.jpg` | Section 5 pollution visual | 10 |
+| `conservation-cta.jpg` *(optional — skip OK)* | Final CTA art | 10 |
 
 ---
 
@@ -228,8 +229,8 @@ Build the empty structure only — no fancy models yet.
 
 ### Files to create
 
-- [ ] `src/context/ScrollProgressContext.jsx`
-- [ ] `src/hooks/useScrollProgress.js`
+- [x] `src/context/ScrollProgressContext.jsx`
+- [x] `src/hooks/useScrollProgress.js`
 
 ### Assets needed
 
@@ -237,12 +238,12 @@ Build the empty structure only — no fancy models yet.
 
 ### Checklist
 
-- [ ] Register GSAP `ScrollTrigger`
-- [ ] Track global scroll progress `0 → 1`
-- [ ] Expose progress via React Context
-- [ ] Progress updates smoothly while scrolling the `500vh` page
+- [x] Register GSAP `ScrollTrigger`
+- [x] Track global scroll progress `0 → 1`
+- [x] Expose progress via React Context
+- [x] Progress updates smoothly while scrolling the `500vh` page
 
-**Exit criteria:** A debug readout (temporary) shows progress from `0.00` to `1.00` as you scroll.
+**Exit criteria:** A debug readout (temporary) shows progress from `0.00` to `1.00` as you scroll. ✅
 
 ---
 
@@ -357,11 +358,11 @@ Build the empty structure only — no fancy models yet.
 
 Folder: `src/assets/models/zone-epipelagic/`
 
-- [ ] `marine-buoy.glb`
-- [ ] `coral-reef.glb`
-- [ ] `sea-turtle.glb`
-- [ ] `dolphin.glb` *(optional)*
-- [ ] `src/assets/images/coral-warming.jpg` *(optional modal art)*
+- [x] `marine-buoy.glb`
+- [x] `coral-reef.glb`
+- [x] `sea-turtle.glb`
+- [x] `dolphin.glb`
+- [x] `src/assets/images/coral-warming.jpg`
 
 ### Atmosphere
 
@@ -399,9 +400,10 @@ Folder: `src/assets/models/zone-epipelagic/`
 
 Folder: `src/assets/models/zone-mesopelagic/`
 
-- [ ] `blue-whale.glb`
-- [ ] `glowing-jellyfish.glb`
-- [ ] `src/assets/images/diel-vertical-migration.svg` *(graph asset / reference)*
+- [x] `blue-whale.glb`
+- [x] `glowing-jellyfish.glb`
+- [x] `glowing-fish.glb` — use both glowing models
+- [ ] Graph built in code (no SVG file required)
 
 ### Atmosphere
 
@@ -412,6 +414,7 @@ Folder: `src/assets/models/zone-mesopelagic/`
 
 - [ ] Blue Whale ← `blue-whale.glb`
 - [ ] Glowing Jellyfish ← `glowing-jellyfish.glb`
+- [ ] Glowing Fish ← `glowing-fish.glb` (use both)
 
 ### Scroll transition behavior
 
@@ -483,9 +486,9 @@ Folder: `src/assets/models/zone-bathypelagic/`
 
 Folder: `src/assets/models/zone-abyssopelagic/`
 
-- [ ] `hydrothermal-vent.glb`
-- [ ] `tripod-fish.glb`
-- [ ] `src/assets/images/vent-chemosynthesis-schematic.svg`
+- [x] `hydrothermal-vent.glb`
+- [x] `tripod-fish.glb`
+- [ ] Schematic built in code (no SVG file required)
 
 ### Atmosphere
 
@@ -530,11 +533,11 @@ Folder: `src/assets/models/zone-abyssopelagic/`
 
 Folder: `src/assets/models/zone-hadalpelagic/`
 
-- [ ] `amphipod.glb`
-- [ ] `plastic-bag.glb`
-- [ ] `src/assets/images/microplastics-data.png`
-- [ ] `src/assets/images/mariana-pollution.png`
-- [ ] `src/assets/images/conservation-cta.png` *(optional)*
+- [x] `amphipod.glb`
+- [x] `plastic-bag.glb`
+- [x] `src/assets/images/microplastic-data.jpg`
+- [x] `src/assets/images/mariana-pollution.jpg`
+- [ ] `conservation-cta` image *(optional — skip OK)*
 
 ### Atmosphere
 
@@ -643,4 +646,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 2 — Global scroll progress (GSAP ScrollTrigger).
+**Next up:** STEP 3 — Sync Three.js camera + lighting to scroll progress.
