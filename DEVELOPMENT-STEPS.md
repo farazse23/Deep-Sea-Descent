@@ -401,10 +401,11 @@ Folder: `src/assets/models/zone-epipelagic/`
 
 Folder: `src/assets/models/zone-mesopelagic/`
 
-- [x] `blue-whale.glb`
-- [x] `glowing-jellyfish.glb`
-- [x] `glowing-fish.glb` — use both glowing models
+- [x] `blue-whale-optimized.glb`
+- [x] `glowing-jellyfish-optimized.glb`
+- [x] `glowing-fish-optimized.glb` — use both glowing models
 - [ ] Graph built in code (no SVG file required)
+- [ ] Static submarine (horizontal, center) ← `../zone-epipelagic/submarine.glb`
 
 ### Atmosphere
 

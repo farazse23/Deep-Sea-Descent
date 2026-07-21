@@ -1,32 +1,31 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Float, useAnimations, useGLTF } from '@react-three/drei'
 import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js'
-import GodRays from '../effects/GodRays'
 import BubbleTrail from '../effects/BubbleTrail'
 import SwimPath from '../effects/SwimPath'
 import OceanModel from '../models/OceanModel'
 import { openTurtleModalFromCanvas } from '../../modals/TurtleModalBridge'
-import submarineUrl from '../../../assets/models/zone-epipelagic/submarine.glb?url'
 import turtleUrl from '../../../assets/models/zone-epipelagic/sea-turtle-optimized.glb?url'
 import dolphinUrl from '../../../assets/models/zone-epipelagic/dolphin-optimized.glb?url'
 
+/**
+ * Dolphin loop (all points stay on-screen):
+ * 1) Pass in front of the user left → right
+ * 2) Arc into a small roam at mid-depth, then repeat
+ */
 const DOLPHIN_PATH = [
-  [-5.0, 1.8, 3.2],
-  [-1.2, 2.4, 4.0],
-  [3.0, 1.6, 3.0],
-  [5.2, 2.2, 0.4],
-  [2.5, 1.4, -2.8],
-  [-2.0, 2.0, -3.2],
-  [-4.5, 1.5, -1.2],
-  [-5.5, 2.1, 1.4],
-]
-
-const SUBMARINE_PATH = [
-  [-2.2, 1.2, 2.0],
-  [0.0, 1.4, 2.4],
-  [2.2, 1.1, 2.0],
-  [1.5, 1.3, 1.2],
-  [-1.5, 1.2, 1.4],
+  // Front pass: left → right (close to camera)
+  [-2.6, 1.0, 3.6],
+  [-1.2, 1.15, 3.85],
+  [0.0, 1.05, 4.0],
+  [1.2, 1.15, 3.85],
+  [2.6, 1.0, 3.6],
+  // Turn back into section roam (still in frame)
+  [2.2, 1.35, 2.6],
+  [1.0, 1.5, 2.0],
+  [-0.2, 1.4, 1.7],
+  [-1.6, 1.3, 2.1],
+  [-2.4, 1.2, 2.8],
 ]
 
 /**
@@ -37,28 +36,12 @@ const TURTLE_SCALE = 1.6
 
 /**
  * Section 1 — Epipelagic (0m–200m / scroll 0→0.2)
+ * Submarine intentionally omitted — static in the next dark zone (STEP 7+).
  */
 export default function EpipelagicZone() {
   return (
     <group>
-      <GodRays position={[0, 7, -5]} />
       <BubbleTrail />
-
-      <Suspense fallback={null}>
-        <SwimPath
-          points={SUBMARINE_PATH}
-          speed={0.02}
-          phase={0}
-          bobAmount={0.05}
-          yawOffset={0}
-        >
-          <OceanModel
-            url={submarineUrl}
-            targetSize={3.5}
-            playAnimation={false}
-          />
-        </SwimPath>
-      </Suspense>
 
       <Suspense fallback={null}>
         <ManualTurtle />
@@ -67,9 +50,9 @@ export default function EpipelagicZone() {
       <Suspense fallback={null}>
         <SwimPath
           points={DOLPHIN_PATH}
-          speed={0.04}
-          phase={0.35}
-          bobAmount={0.22}
+          speed={0.035}
+          phase={0}
+          bobAmount={0.08}
           yawOffset={0}
         >
           <OceanModel url={dolphinUrl} targetSize={3.6} />
@@ -157,5 +140,4 @@ function ManualTurtle() {
 }
 
 useGLTF.preload(turtleUrl)
-useGLTF.preload(submarineUrl)
 useGLTF.preload(dolphinUrl)
