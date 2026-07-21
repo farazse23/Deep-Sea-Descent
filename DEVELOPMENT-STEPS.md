@@ -316,13 +316,13 @@ Build the empty structure only — no fancy models yet.
 
 ### Files to create
 
-- [ ] `src/components/modals/ModalRoot.jsx`
-- [ ] `src/components/modals/LeftInfoCard.jsx`
-- [ ] `src/components/modals/FullscreenBlurModal.jsx`
-- [ ] `src/components/modals/SideInfoPanel.jsx`
-- [ ] `src/components/modals/SchematicPanel.jsx`
-- [ ] `src/components/modals/ConservationModal.jsx`
-- [ ] `src/hooks/useScrollLock.js`
+- [x] `src/components/modals/ModalRoot.jsx`
+- [x] `src/components/modals/LeftInfoCard.jsx`
+- [x] `src/components/modals/FullscreenBlurModal.jsx`
+- [x] `src/components/modals/SideInfoPanel.jsx`
+- [x] `src/components/modals/SchematicPanel.jsx`
+- [x] `src/components/modals/ConservationModal.jsx`
+- [x] `src/hooks/useScrollLock.js`
 
 ### Assets needed
 
@@ -330,17 +330,17 @@ Build the empty structure only — no fancy models yet.
 
 ### Checklist
 
-- [ ] Shared modal / panel system with Framer Motion
-- [ ] Support variants:
-  - [ ] Card from the **left** (`LeftInfoCard.jsx`)
-  - [ ] **Fullscreen blurred** modal (`FullscreenBlurModal.jsx`)
-  - [ ] **Side panel** (`SideInfoPanel.jsx`)
-  - [ ] Informational **schematic** panel (`SchematicPanel.jsx`)
-  - [ ] Final story / CTA modal (`ConservationModal.jsx`)
-- [ ] Ability to **pause scrolling** while a modal is open
-- [ ] Ability to resume scrolling on close
+- [x] Shared modal / panel system with Framer Motion
+- [x] Support variants:
+  - [x] Card from the **left** (`LeftInfoCard.jsx`)
+  - [x] **Fullscreen blurred** modal (`FullscreenBlurModal.jsx`)
+  - [x] **Side panel** (`SideInfoPanel.jsx`)
+  - [x] Informational **schematic** panel (`SchematicPanel.jsx`)
+  - [x] Final story / CTA modal (`ConservationModal.jsx`)
+- [x] Ability to **pause scrolling** while a modal is open
+- [x] Ability to resume scrolling on close
 
-**Exit criteria:** Opening/closing a test modal works; scroll lock works.
+**Exit criteria:** Opening/closing a test modal works; scroll lock works. ✅
 
 ---
 
@@ -646,4 +646,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 5 — Shared Framer Motion modal system + scroll lock.
+**Next up:** STEP 6 — Epipelagic zone (models, god rays, bubbles, turtle modal).
