@@ -253,10 +253,10 @@ Build the empty structure only — no fancy models yet.
 
 ### Files to create
 
-- [ ] `src/components/three/DescentScene.jsx`
-- [ ] `src/components/three/DescentCamera.jsx`
-- [ ] `src/components/three/DescentLighting.jsx`
-- [ ] `src/utils/depthFromProgress.js`
+- [x] `src/components/three/DescentScene.jsx`
+- [x] `src/components/three/DescentCamera.jsx`
+- [x] `src/components/three/DescentLighting.jsx`
+- [x] `src/utils/depthFromProgress.js`
 
 ### Assets needed
 
@@ -264,12 +264,12 @@ Build the empty structure only — no fancy models yet.
 
 ### Checklist
 
-- [ ] In R3F `useFrame()`, read global scroll progress
-- [ ] Animate camera smoothly down the **Y-axis** (vertical descent path)
-- [ ] Change **background lighting colors** based on scroll position
-- [ ] Synchronize scene transitions with scroll progress (zone-aware lighting baseline)
+- [x] In R3F `useFrame()`, read global scroll progress
+- [x] Animate camera smoothly down the **Y-axis** (vertical descent path)
+- [x] Change **background lighting colors** based on scroll position
+- [x] Synchronize scene transitions with scroll progress (zone-aware lighting baseline)
 
-**Exit criteria:** Scrolling clearly moves the camera downward; light color shifts across the dive.
+**Exit criteria:** Scrolling clearly moves the camera downward; light color shifts across the dive. ✅
 
 ---
 
@@ -646,4 +646,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 3 — Sync Three.js camera + lighting to scroll progress.
+**Next up:** STEP 4 — Pinned HUD (depth / temp / pressure + zone ScrollTo).

@@ -9,7 +9,7 @@ export default function ExperienceCanvas() {
     <div className="pointer-events-none fixed inset-0 z-0 h-screen w-screen">
       <Canvas
         gl={{ antialias: true, alpha: false }}
-        camera={{ position: [0, 0, 5], fov: 50 }}
+        camera={{ position: [0, 0, 8], fov: 50, near: 0.1, far: 200 }}
       >
         <DescentScene />
       </Canvas>
