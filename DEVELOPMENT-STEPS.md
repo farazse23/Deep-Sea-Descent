@@ -188,10 +188,10 @@ Build the empty structure only — no fancy models yet.
 
 ### Files to create
 
-- [ ] `src/components/layout/ScrollScaffold.jsx`
-- [ ] `src/components/layout/ExperienceCanvas.jsx`
-- [ ] `src/data/zoneMeta.js` (zone names, depth ranges, section ids)
-- [ ] Update `src/App.jsx` to compose both layers
+- [x] `src/components/layout/ScrollScaffold.jsx`
+- [x] `src/components/layout/ExperienceCanvas.jsx`
+- [x] `src/data/zoneMeta.js` (zone names, depth ranges, section ids)
+- [x] Update `src/App.jsx` to compose both layers
 
 ### Assets needed
 
@@ -199,26 +199,26 @@ Build the empty structure only — no fancy models yet.
 
 ### 1A — Foreground layer (HTML / Tailwind)
 
-- [ ] Transparent, very tall container: `h-[500vh]`
-- [ ] Split into **five** distinct sections
-- [ ] Each section: `h-screen` + `w-full` (scroll footprint)
-- [ ] Sections map to scroll ranges:
-  - [ ] Section 1: `0vh → 100vh` — Epipelagic
-  - [ ] Section 2: `100vh → 200vh` — Mesopelagic
-  - [ ] Section 3: `200vh → 300vh` — Bathypelagic
-  - [ ] Section 4: `300vh → 400vh` — Abyssopelagic
-  - [ ] Section 5: `400vh → 500vh` — Hadalpelagic
-- [ ] Placeholder text content per section (zone name + depth range) so scroll is testable
-- [ ] Each section gets a stable `id` (e.g. `zone-epipelagic`) for later ScrollTo
+- [x] Transparent, very tall container: `h-[500vh]`
+- [x] Split into **five** distinct sections
+- [x] Each section: `h-screen` + `w-full` (scroll footprint)
+- [x] Sections map to scroll ranges:
+  - [x] Section 1: `0vh → 100vh` — Epipelagic
+  - [x] Section 2: `100vh → 200vh` — Mesopelagic
+  - [x] Section 3: `200vh → 300vh` — Bathypelagic
+  - [x] Section 4: `300vh → 400vh` — Abyssopelagic
+  - [x] Section 5: `400vh → 500vh` — Hadalpelagic
+- [x] Placeholder text content per section (zone name + depth range) so scroll is testable
+- [x] Each section gets a stable `id` (e.g. `zone-epipelagic`) for later ScrollTo
 
 ### 1B — Background layer (WebGL)
 
-- [ ] Single **fixed, full-screen** React Three Fiber `<Canvas>` in `ExperienceCanvas.jsx`
-- [ ] Canvas sits behind the HTML layer (`fixed inset-0`, lower z-index)
-- [ ] Foreground stays clickable / scrollable above it
-- [ ] Empty `DescentScene.jsx` stub is OK for now
+- [x] Single **fixed, full-screen** React Three Fiber `<Canvas>` in `ExperienceCanvas.jsx`
+- [x] Canvas sits behind the HTML layer (`fixed inset-0`, lower z-index)
+- [x] Foreground stays clickable / scrollable above it
+- [x] Empty `DescentScene.jsx` stub is OK for now
 
-**Exit criteria:** Scrolling through 5 full screens works; canvas is fixed behind; no scroll sync logic yet.
+**Exit criteria:** Scrolling through 5 full screens works; canvas is fixed behind; no scroll sync logic yet. ✅
 
 ---
 
@@ -643,4 +643,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 1 — Two-layer architecture shell (`ScrollScaffold.jsx` + `ExperienceCanvas.jsx`).
+**Next up:** STEP 2 — Global scroll progress (GSAP ScrollTrigger).
