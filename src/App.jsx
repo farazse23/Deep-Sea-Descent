@@ -8,7 +8,7 @@ import TurtleModalBridge from './components/modals/TurtleModalBridge'
 import JellyfishModalBridge from './components/modals/JellyfishModalBridge'
 import AnglerfishModalBridge from './components/modals/AnglerfishModalBridge'
 import VentModalBridge from './components/modals/VentModalBridge'
-import PlasticBagModalBridge from './components/modals/PlasticBagModalBridge'
+import HadalModalBridge from './components/modals/HadalModalBridge'
 import { ModalProvider } from './context/ModalContext'
 import { ScrollProgressProvider } from './context/ScrollProgressContext'
 
@@ -24,7 +24,7 @@ export default function App() {
         <JellyfishModalBridge />
         <AnglerfishModalBridge />
         <VentModalBridge />
-        <PlasticBagModalBridge />
+        <HadalModalBridge />
         <ModalTestPanel />
         <ScrollProgressDebug />
       </ModalProvider>

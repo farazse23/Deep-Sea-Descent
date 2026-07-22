@@ -9,41 +9,39 @@ import { scrollToZone } from '../../utils/scrollToZone'
 
 /**
  * Fixed glass HUD — depth / temp / pressure + zone navigation.
- * Turns warning-red in the hadal climax (progress ≥ 0.8).
+ * Shifts to violet “extreme depth” styling in the hadal climax (progress ≥ 0.8).
  */
 export default function DepthHud() {
   const progress = useScrollProgress()
   const activeZone = zoneFromProgress(progress)
-  const warning = progress >= 0.8
+  const extremeDepth = progress >= 0.8
 
   const depthM = Math.round(depthMetersFromProgress(progress))
   const tempC = temperatureFromProgress(progress)
   const pressureAtm = pressureFromProgress(progress)
 
-  const border = warning ? 'border-rose-400/50' : 'border-cyan-300/25'
-  const glow = warning
-    ? 'shadow-[0_0_40px_rgba(244,63,94,0.25)]'
+  const border = extremeDepth ? 'border-violet-400/45' : 'border-cyan-300/25'
+  const glow = extremeDepth
+    ? 'shadow-[0_0_40px_rgba(139,92,246,0.28)]'
     : 'shadow-[0_0_40px_rgba(34,211,238,0.08)]'
-  const accent = warning ? 'text-rose-300' : 'text-cyan-300/80'
-  const activeText = warning ? 'text-rose-100' : 'text-cyan-200'
-  const idleText = warning
-    ? 'text-white/45 hover:text-rose-100/90'
+  const accent = extremeDepth ? 'text-violet-300' : 'text-cyan-300/80'
+  const activeText = extremeDepth ? 'text-violet-100' : 'text-cyan-200'
+  const idleText = extremeDepth
+    ? 'text-white/45 hover:text-violet-100/90'
     : 'text-white/45 hover:text-cyan-100/90'
-  const meterLabel = warning ? 'text-rose-400/80' : 'text-cyan-400/70'
-  const meterValue = warning ? 'text-rose-50' : 'text-cyan-50'
-  const lineTrack = warning ? 'bg-rose-400/25' : 'bg-cyan-400/25'
-  const lineFill = warning
-    ? 'bg-rose-400 shadow-[0_0_8px_rgba(251,113,133,0.9)]'
+  const meterLabel = extremeDepth ? 'text-violet-400/80' : 'text-cyan-400/70'
+  const meterValue = extremeDepth ? 'text-violet-50' : 'text-cyan-50'
+  const lineTrack = extremeDepth ? 'bg-violet-400/25' : 'bg-cyan-400/25'
+  const lineFill = extremeDepth
+    ? 'bg-violet-400 shadow-[0_0_8px_rgba(167,139,250,0.9)]'
     : 'bg-cyan-300 shadow-[0_0_8px_rgba(103,232,249,0.8)]'
-  const dot = warning
-    ? 'border-rose-100 bg-rose-400 shadow-[0_0_10px_rgba(244,63,94,0.95)]'
+  const dot = extremeDepth
+    ? 'border-violet-100 bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.95)]'
     : 'border-cyan-100 bg-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.9)]'
 
   return (
     <aside
-      className={`pointer-events-auto fixed right-6 top-1/2 z-40 flex w-[9.5rem] -translate-y-1/2 flex-col gap-5 rounded-sm border bg-slate-950/45 px-3 py-4 backdrop-blur-md md:w-44 md:px-4 md:py-5 ${border} ${glow} ${
-        warning ? 'animate-pulse' : ''
-      }`}
+      className={`pointer-events-auto fixed right-6 top-1/2 z-40 flex w-[9.5rem] -translate-y-1/2 flex-col gap-5 rounded-sm border bg-slate-950/45 px-3 py-4 backdrop-blur-md md:w-44 md:px-4 md:py-5 ${border} ${glow}`}
       aria-label="Dive heads-up display"
     >
       <header>
@@ -52,9 +50,9 @@ export default function DepthHud() {
         >
           Dive HUD
         </p>
-        {warning ? (
-          <p className="mt-1 font-mono text-[9px] tracking-wider text-rose-300/95">
-            ⚠ POLLUTION ALERT
+        {extremeDepth ? (
+          <p className="mt-1 font-mono text-[9px] tracking-wider text-violet-300/95">
+            ◆ EXTREME DEPTH
           </p>
         ) : null}
       </header>
@@ -105,7 +103,7 @@ export default function DepthHud() {
 
       <div
         className={`space-y-3 border-t pt-3 ${
-          warning ? 'border-rose-400/25' : 'border-cyan-400/15'
+          extremeDepth ? 'border-violet-400/25' : 'border-cyan-400/15'
         }`}
       >
         <Meter

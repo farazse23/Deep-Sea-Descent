@@ -6,7 +6,7 @@ import { cameraYFromProgress, CAMERA_Z } from '../../utils/depthFromProgress'
 
 /**
  * Moves the default camera down the Y-axis from scroll progress (0 → 1).
- * In the hadal climax (progress ≳ 0.8), pitches downward dramatically.
+ * In the hadal climax (progress ≳ 0.8), pitches downward into the trench.
  */
 export default function DescentCamera() {
   const progress = useScrollProgress()

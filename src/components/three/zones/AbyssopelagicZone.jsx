@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js'
 import SwimPath from '../effects/SwimPath'
 import OceanModel from '../models/OceanModel'
+import { hideHelperMeshes } from '../utils/hideHelperMeshes'
 import { openVentModalFromCanvas } from '../../modals/VentModalBridge'
 import ventUrl from '../../../assets/models/zone-abyssopelagic/hydrothermal-vent-optimized.glb?url'
 import tripodUrl from '../../../assets/models/zone-abyssopelagic/tripod-fish-optimized.glb?url'
@@ -24,41 +25,6 @@ const TRIPOD_PATH = [
   [-0.5, -0.5, 2.8],
   [-2.0, -0.4, 3.0],
 ]
-
-/** Hide flat helper lines / planes baked into heavy GLBs. */
-function hideHelperMeshes(root) {
-  root.traverse((child) => {
-    if (!child.isMesh) return
-    const name = (child.name || '').toLowerCase()
-    const vertCount = child.geometry?.attributes?.position?.count ?? 0
-    child.geometry?.computeBoundingBox?.()
-    const box = child.geometry?.boundingBox
-    let isThinSlab = false
-    if (box && vertCount > 0 && vertCount <= 48) {
-      const size = box.getSize(new THREE.Vector3())
-      const dims = [size.x, size.y, size.z].sort((a, b) => a - b)
-      isThinSlab = dims[0] < dims[1] * 0.1 && dims[1] > 0.1
-    }
-    const mats = Array.isArray(child.material)
-      ? child.material
-      : [child.material]
-    const isLineHelper = mats.some(
-      (m) =>
-        m &&
-        (m.wireframe || m.opacity < 0.99 || (m.transparent && m.opacity < 1)),
-    )
-    if (
-      isThinSlab ||
-      isLineHelper ||
-      vertCount <= 8 ||
-      name.includes('line') ||
-      name.includes('plane') ||
-      name.includes('helper')
-    ) {
-      child.visible = false
-    }
-  })
-}
 
 /**
  * Section 4 — Abyssopelagic (4,000m–6,000m / scroll 0.6→0.8)

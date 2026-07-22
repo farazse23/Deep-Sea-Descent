@@ -73,6 +73,9 @@ export const zones = [
     progressStart: 0.8,
     progressEnd: 1,
     order: 5,
+    tagline: 'Challenger Deep — the deepest trench on Earth.',
+    interactionHint: 'Click the glowing amphipod to explore life at the limit.',
+    theme: 'hadal',
   },
 ]
 

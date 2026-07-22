@@ -1,22 +1,8 @@
 import { useEffect } from 'react'
 import { MODAL_TYPES, useModal } from '../../context/ModalContext'
+import { ventModal } from '../../data/modalContent'
 
 export const VENT_MODAL_EVENT = 'deep-sea:open-vent-modal'
-
-const VENT_MODAL_BODY = [
-  {
-    heading: 'Chemosynthesis',
-    text: 'At hydrothermal vents, microbes turn chemicals from Earth’s crust — especially hydrogen sulfide — into energy. No sunlight required.',
-  },
-  {
-    heading: 'Hydrothermal ecosystems',
-    text: 'Heat and minerals fuel dense communities: microbes, tube worms, crabs, and fish clustered around black smokers and chimneys.',
-  },
-  {
-    heading: 'Life without sunlight',
-    text: 'These oases prove that complex food webs can run on geothermal chemistry alone — a model for life in Earth’s darkest oceans and beyond.',
-  },
-]
 
 /**
  * Opens the Section 4 schematic panel from R3F vent clicks.
@@ -28,9 +14,7 @@ export default function VentModalBridge() {
     const onOpen = () => {
       openModal({
         type: MODAL_TYPES.SCHEMATIC,
-        title: 'Hydrothermal Vents',
-        body: VENT_MODAL_BODY,
-        chart: 'chemosynthesis',
+        ...ventModal,
       })
     }
 

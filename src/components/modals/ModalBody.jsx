@@ -4,7 +4,11 @@
  */
 export default function ModalBody({ body }) {
   if (body == null || body === '') {
-    return <p className="text-white/50">No content yet for this panel.</p>
+    return (
+      <p className="text-white/50">
+        Content for this panel is not available yet.
+      </p>
+    )
   }
 
   if (Array.isArray(body)) {

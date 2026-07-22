@@ -37,16 +37,16 @@ When a file is ready, mark it `[x]`.
 
 ### `models/zone-hadalpelagic/` — STEP 10
 
-- [x] `amphipod-optimized.glb`
-- [x] `plastic-bag-optimized.glb`
+- [x] `amphipod-optimized.glb` — trench scavengers (clickable + patrol paths)
+- [ ] `plastic-bag-optimized.glb` — **unused** (old pollution theme removed)
 
 ---
 
 ## Images — `images/`
 
 - [x] `coral-warming.jpg` — STEP 6 modal art
-- [x] `microplastic-data.jpg` — STEP 10
-- [x] `mariana-pollution.jpg` — STEP 10
+- [ ] `microplastic-data.jpg` — **unused** (old Section 5 theme)
+- [ ] `mariana-pollution.jpg` — **unused** (old Section 5 theme)
 - [ ] `conservation-cta` — STEP 10 (optional — skip OK)
 - [ ] Graph / vent schematic — **built in code** (no SVG required)
 

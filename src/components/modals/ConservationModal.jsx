@@ -66,7 +66,7 @@ export default function ConservationModal({
         </div>
         <div className="border-t border-rose-400/20 px-5 py-4">
           <p className="font-display text-center text-xs uppercase tracking-[0.25em] text-rose-200/90">
-            Protect the deep — act above the waves
+            The deep ocean needs defenders — act above the waves
           </p>
           <a
             href="https://oceanconservancy.org/"
@@ -74,7 +74,7 @@ export default function ConservationModal({
             rel="noreferrer"
             className="mt-3 block w-full border border-rose-400/40 bg-rose-500/15 py-2.5 text-center font-display text-xs uppercase tracking-[0.2em] text-rose-100 transition hover:bg-rose-500/30"
           >
-            Take action
+            Take action for our oceans
           </a>
         </div>
       </motion.article>

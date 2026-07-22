@@ -1,9 +1,14 @@
 import { MODAL_TYPES, useModal } from '../../context/ModalContext'
-import coralWarmingImg from '../../assets/images/coral-warming.jpg?url'
+import {
+  anglerfishModal,
+  conservationModal,
+  hadalModal,
+  jellyfishModal,
+  turtleModal,
+  ventModal,
+} from '../../data/modalContent'
 
-/**
- * Temporary STEP 5 tester — remove after zone click targets exist.
- */
+/** Dev preview — opens every modal variant with production copy. */
 export default function ModalTestPanel() {
   const { openModal } = useModal()
 
@@ -11,47 +16,43 @@ export default function ModalTestPanel() {
     {
       label: 'Left card',
       type: MODAL_TYPES.LEFT_CARD,
-      title: 'Warming Oceans',
-      imageSrc: coralWarmingImg,
-      body: [
-        'In the sunlit epipelagic zone, coral reefs are among the most productive — and vulnerable — ecosystems on Earth.',
-        'As oceans warm, corals bleach and reefs collapse, threatening turtles, fish, and coastal communities.',
-      ],
+      ...turtleModal,
     },
     {
       label: 'Fullscreen',
       type: MODAL_TYPES.FULLSCREEN_BLUR,
-      title: 'Diel Migration',
-      body: 'Placeholder — Section 2 blurred modal. Interactive graph comes later.',
+      ...jellyfishModal,
     },
     {
-      label: 'Side panel',
+      label: 'Anglerfish',
       type: MODAL_TYPES.SIDE_PANEL,
-      title: 'Bioluminescence',
-      body: 'Placeholder — Section 3 side panel. Adaptations for total darkness.',
+      ...anglerfishModal,
     },
     {
       label: 'Schematic',
       type: MODAL_TYPES.SCHEMATIC,
-      title: 'Chemosynthesis',
-      body: 'Placeholder — Section 4 schematic. Life without sunlight at vents.',
+      ...ventModal,
+    },
+    {
+      label: 'Hadal panel',
+      type: MODAL_TYPES.SIDE_PANEL,
+      ...hadalModal,
     },
     {
       label: 'Conservation',
       type: MODAL_TYPES.CONSERVATION,
-      title: 'Protect The Deep',
-      body: 'Placeholder — Section 5 CTA. Microplastics reach even the Mariana Trench.',
+      ...conservationModal,
     },
   ]
 
   return (
     <div className="pointer-events-auto fixed bottom-4 left-4 z-50 flex max-w-xs flex-wrap gap-2 rounded border border-white/15 bg-black/70 p-2 backdrop-blur-sm">
       <p className="w-full font-mono text-[10px] tracking-wider text-white/50">
-        MODAL TEST (STEP 5)
+        MODAL PREVIEW
       </p>
       {samples.map((sample) => (
         <button
-          key={sample.type}
+          key={sample.label}
           type="button"
           onClick={() =>
             openModal({
@@ -59,6 +60,8 @@ export default function ModalTestPanel() {
               title: sample.title,
               body: sample.body,
               imageSrc: sample.imageSrc,
+              imageSrcAlt: sample.imageSrcAlt,
+              chart: sample.chart,
             })
           }
           className="rounded border border-cyan-400/30 bg-cyan-950/40 px-2 py-1 font-mono text-[10px] tracking-wide text-cyan-100 hover:border-cyan-300/60"
