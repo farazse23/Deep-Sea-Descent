@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import ModalBody from './ModalBody'
+import ChemosynthesisSchematic from './ChemosynthesisSchematic'
 
 /** Section 4 — informational schematic panel. */
-export default function SchematicPanel({ title, body, onClose }) {
+export default function SchematicPanel({ title, body, chart, onClose }) {
   return (
     <motion.div
       className="pointer-events-none fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-8"
@@ -48,6 +49,7 @@ export default function SchematicPanel({ title, body, onClose }) {
         </div>
         <div className="overflow-y-auto px-5 py-4 text-base leading-relaxed text-white/85">
           <ModalBody body={body} />
+          {chart === 'chemosynthesis' ? <ChemosynthesisSchematic /> : null}
         </div>
       </motion.article>
     </motion.div>

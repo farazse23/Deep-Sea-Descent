@@ -2,7 +2,13 @@ import { motion } from 'framer-motion'
 import ModalBody from './ModalBody'
 
 /** Section 5 — final conservation / CTA modal. */
-export default function ConservationModal({ title, body, imageSrc, onClose }) {
+export default function ConservationModal({
+  title,
+  body,
+  imageSrc,
+  imageSrcAlt,
+  onClose,
+}) {
   return (
     <motion.div
       className="pointer-events-none fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-8"
@@ -30,7 +36,14 @@ export default function ConservationModal({ title, body, imageSrc, onClose }) {
           <img
             src={imageSrc}
             alt=""
-            className="h-44 w-full shrink-0 object-cover bg-slate-900"
+            className="h-40 w-full shrink-0 object-cover bg-slate-900"
+          />
+        ) : null}
+        {imageSrcAlt ? (
+          <img
+            src={imageSrcAlt}
+            alt=""
+            className="h-36 w-full shrink-0 object-cover bg-slate-900"
           />
         ) : null}
         <div className="flex items-start justify-between gap-3 border-b border-rose-400/25 px-5 py-4">
@@ -53,8 +66,16 @@ export default function ConservationModal({ title, body, imageSrc, onClose }) {
         </div>
         <div className="border-t border-rose-400/20 px-5 py-4">
           <p className="font-display text-center text-xs uppercase tracking-[0.25em] text-rose-200/90">
-            Protect the deep — CTA placeholder
+            Protect the deep — act above the waves
           </p>
+          <a
+            href="https://oceanconservancy.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 block w-full border border-rose-400/40 bg-rose-500/15 py-2.5 text-center font-display text-xs uppercase tracking-[0.2em] text-rose-100 transition hover:bg-rose-500/30"
+          >
+            Take action
+          </a>
         </div>
       </motion.article>
     </motion.div>

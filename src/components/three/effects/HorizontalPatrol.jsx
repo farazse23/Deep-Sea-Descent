@@ -11,6 +11,7 @@ export default function HorizontalPatrol({
   xMax = 4.5,
   speed = 1.1,
   phase = 0,
+  yawOffset = 0,
   children,
 }) {
   const group = useRef(null)
@@ -24,8 +25,8 @@ export default function HorizontalPatrol({
     const goingRight = Math.floor(t) % 2 === 0
 
     group.current.position.set(x, y + Math.sin(t * 1.3) * 0.12, z)
-    // Face travel direction (models that face +Z need π offset — adjust if backwards)
-    group.current.rotation.y = goingRight ? Math.PI / 2 : -Math.PI / 2
+    group.current.rotation.y =
+      (goingRight ? Math.PI / 2 : -Math.PI / 2) + yawOffset
   })
 
   return <group ref={group}>{children}</group>

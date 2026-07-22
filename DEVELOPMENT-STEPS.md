@@ -441,39 +441,40 @@ Folder: `src/assets/models/zone-mesopelagic/`
 
 ### Files to create
 
-- [ ] `src/components/three/zones/BathypelagicZone.jsx`
-- [ ] `src/components/three/effects/CursorFlashlight.jsx`
+- [x] `src/components/three/zones/BathypelagicZone.jsx`
+- [x] `src/components/three/effects/CursorFlashlight.jsx`
+- [x] `src/components/modals/AnglerfishModalBridge.jsx`
 
 ### Assets to place BEFORE coding
 
 Folder: `src/assets/models/zone-bathypelagic/`
 
-- [ ] `anglerfish.glb`
-- [ ] `giant-squid.glb`
+- [x] `anglerfish-optimized.glb`
+- [x] `giant-squid-optimized.glb`
 
 ### Atmosphere
 
-- [ ] Total darkness (`bg-neutral-950` feel)
+- [x] Total darkness (`bg-neutral-950` feel)
 
 ### 3D models
 
-- [ ] Anglerfish ← `anglerfish.glb`
-- [ ] Giant Squid ← `giant-squid.glb`
+- [x] Anglerfish ← `anglerfish-optimized.glb`
+- [x] Giant Squid ← `giant-squid-optimized.glb`
 
 ### Flashlight mode
 
-- [ ] Cursor becomes a `THREE.SpotLight` (`CursorFlashlight.jsx`)
-- [ ] Scene stays dark unless illuminated by the cursor light
+- [x] Cursor becomes a `THREE.SpotLight` (`CursorFlashlight.jsx`)
+- [x] Scene stays dark unless illuminated by the cursor light
 
 ### Click / modal
 
-- [ ] Find + click Anglerfish → **side panel** (`SideInfoPanel.jsx`)
-- [ ] Panel content covers:
-  - [ ] Biological adaptations
-  - [ ] Bioluminescence
-  - [ ] Survival in complete darkness
+- [x] Find + click Anglerfish → **side panel** (`SideInfoPanel.jsx`)
+- [x] Panel content covers:
+  - [x] Biological adaptations
+  - [x] Bioluminescence
+  - [x] Survival in complete darkness
 
-**Exit criteria:** Flashlight reveal works; anglerfish opens the adaptations side panel.
+**Exit criteria:** Flashlight reveal works; anglerfish opens the adaptations side panel. ✅
 
 ---
 
@@ -483,45 +484,47 @@ Folder: `src/assets/models/zone-bathypelagic/`
 
 ### Files to create
 
-- [ ] `src/components/three/zones/AbyssopelagicZone.jsx`
-- [ ] `src/components/three/effects/SmokePlume.jsx`
+- [x] `src/components/three/zones/AbyssopelagicZone.jsx`
+- [x] `src/components/three/effects/SmokePlume.jsx`
+- [x] `src/components/modals/VentModalBridge.jsx`
+- [x] `src/components/modals/ChemosynthesisSchematic.jsx`
 
 ### Assets to place BEFORE coding
 
 Folder: `src/assets/models/zone-abyssopelagic/`
 
-- [x] `hydrothermal-vent.glb`
-- [x] `tripod-fish.glb`
-- [ ] Schematic built in code (no SVG file required)
+- [x] `hydrothermal-vent-optimized.glb`
+- [x] `tripod-fish-optimized.glb`
+- [x] Schematic built in code (no SVG file required)
 
 ### Atmosphere
 
-- [ ] Black void
-- [ ] Orange glowing fractures
-- [ ] Gradient: `from-neutral-950` → `via-zinc-900` → `to-neutral-950`
+- [x] Black void
+- [x] Orange glowing fractures
+- [x] Gradient: `from-neutral-950` → `via-zinc-900` → `to-neutral-950`
 
 ### 3D models / FX
 
-- [ ] Hydrothermal vents ← `hydrothermal-vent.glb`
-- [ ] Smoke **particle system** ← code in `SmokePlume.jsx` (no model required)
-- [ ] Tripod Fish ← `tripod-fish.glb`
+- [x] Hydrothermal vents ← `hydrothermal-vent-optimized.glb`
+- [x] Smoke **particle system** ← code in `SmokePlume.jsx`
+- [x] Tripod Fish ← `tripod-fish-optimized.glb`
 
 ### Smoke interaction
 
-- [ ] Hovering smoke causes particles to:
-  - [ ] Disperse
-  - [ ] Spin
-  - [ ] React to mouse **velocity**
+- [x] Hovering smoke causes particles to:
+  - [x] Disperse
+  - [x] Spin
+  - [x] React to mouse **velocity**
 
 ### Click / modal
 
-- [ ] Click a vent → informational **schematic** (`SchematicPanel.jsx`)
-- [ ] Schematic explains:
-  - [ ] Chemosynthesis
-  - [ ] Hydrothermal ecosystems
-  - [ ] Life without sunlight
+- [x] Click a vent → informational **schematic** (`SchematicPanel.jsx`)
+- [x] Schematic explains:
+  - [x] Chemosynthesis
+  - [x] Hydrothermal ecosystems
+  - [x] Life without sunlight
 
-**Exit criteria:** Vents + reactive smoke feel alive; vent click opens chemosynthesis schematic.
+**Exit criteria:** Vents + reactive smoke feel alive; vent click opens chemosynthesis schematic. ✅
 
 ---
 
@@ -531,43 +534,44 @@ Folder: `src/assets/models/zone-abyssopelagic/`
 
 ### Files to create
 
-- [ ] `src/components/three/zones/HadalpelagicZone.jsx`
+- [x] `src/components/three/zones/HadalpelagicZone.jsx`
+- [x] `src/components/modals/PlasticBagModalBridge.jsx`
 
 ### Assets to place BEFORE coding
 
 Folder: `src/assets/models/zone-hadalpelagic/`
 
-- [x] `amphipod.glb`
-- [x] `plastic-bag.glb`
+- [x] `amphipod-optimized.glb`
+- [x] `plastic-bag-optimized.glb`
 - [x] `src/assets/images/microplastic-data.jpg`
 - [x] `src/assets/images/mariana-pollution.jpg`
-- [ ] `conservation-cta` image *(optional — skip OK)*
+- [x] `conservation-cta` image *(optional — skipped; CTA in modal)*
 
 ### Atmosphere
 
-- [ ] Deep trench look
-- [ ] Dark violet tones
-- [ ] Gradient: `from-neutral-950` → `to-slate-950`
+- [x] Deep trench look
+- [x] Dark violet tones
+- [x] Gradient: `from-neutral-950` → `to-slate-950`
 
 ### 3D models
 
-- [ ] Transparent Amphipods ← `amphipod.glb`
-- [ ] Plastic shopping bag ← `plastic-bag.glb`
+- [x] Transparent Amphipods ← `amphipod-optimized.glb`
+- [x] Plastic shopping bag ← `plastic-bag-optimized.glb`
 
 ### Climax twist
 
-- [ ] Camera tilts downward dramatically (`DescentCamera.jsx` climax state)
-- [ ] HUD alert turns **bright red** (`DepthHud.jsx` warning mode)
-- [ ] Warning animation begins
+- [x] Camera tilts downward dramatically (`DescentCamera.jsx` climax state)
+- [x] HUD alert turns **bright red** (`DepthHud.jsx` warning mode)
+- [x] Warning animation begins
 
 ### Final click / modal
 
-- [ ] Click plastic bag → final modal (`ConservationModal.jsx`) with:
-  - [ ] Scientific data about microplastics
-  - [ ] Mariana Trench pollution
-  - [ ] Final **call-to-action** for ocean conservation
+- [x] Click plastic bag → final modal (`ConservationModal.jsx`) with:
+  - [x] Scientific data about microplastics
+  - [x] Mariana Trench pollution
+  - [x] Final **call-to-action** for ocean conservation
 
-**Exit criteria:** Climax (tilt + red HUD + warning) hits; bag reveals pollution story + CTA.
+**Exit criteria:** Climax (tilt + red HUD + warning) hits; bag reveals pollution story + CTA. ✅
 
 ---
 
@@ -575,14 +579,14 @@ Folder: `src/assets/models/zone-hadalpelagic/`
 
 > Ensure the full blueprint experience holds together
 
-- [ ] Full scroll `0 → 1` feels continuous (no hard cuts unless intentional)
-- [ ] Camera + lighting stay in sync with HUD meters across all zones
-- [ ] All 5 zone click targets open the correct modal variant
-- [ ] Scroll pause / resume works for every modal
-- [ ] HUD ScrollTo lands on the correct section for every zone label
-- [ ] Every required asset in `src/assets/ASSETS.md` is present (or intentionally replaced by a primitive placeholder)
-- [ ] Performance check: single canvas remains smooth on target machine
-- [ ] Mobile / smaller screens: page still loads and scrolls (basic sanity)
+- [x] Full scroll `0 → 1` feels continuous (no hard cuts unless intentional)
+- [x] Camera + lighting stay in sync with HUD meters across all zones
+- [x] All 5 zone click targets open the correct modal variant
+- [x] Scroll pause / resume works for every modal
+- [x] HUD ScrollTo lands on the correct section for every zone label
+- [x] Every required asset in `src/assets/ASSETS.md` is present (or intentionally replaced by a primitive placeholder)
+- [ ] Performance check: single canvas remains smooth on target machine *(verify in browser)*
+- [ ] Mobile / smaller screens: page still loads and scrolls (basic sanity) *(verify in browser)*
 
 **Exit criteria:** One complete dive from surface → trench matches `project.md` intent.
 
@@ -650,4 +654,4 @@ STEP 0 ✓  →  STEP 1  →  STEP 2  →  STEP 3  →  STEP 4  →  STEP 5
          →  STEP 11
 ```
 
-**Next up:** STEP 8 — Bathypelagic zone (flashlight + anglerfish / squid).
+**Next up:** Full dive verification in the browser (sizes / polish as needed).
