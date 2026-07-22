@@ -14,6 +14,8 @@ export default function SwimPath({
   bobAmount = 0.15,
   yawOffset = Math.PI,
   lockHorizon = true,
+  lookAhead = 0.012,
+  curveTension = 0.45,
   children,
 }) {
   const group = useRef(null)
@@ -23,9 +25,9 @@ export default function SwimPath({
         points.map((p) => new THREE.Vector3(...p)),
         true,
         'catmullrom',
-        0.45,
+        curveTension,
       ),
-    [points],
+    [points, curveTension],
   )
 
   const lookTarget = useMemo(() => new THREE.Vector3(), [])
@@ -34,14 +36,14 @@ export default function SwimPath({
   useFrame(({ clock }) => {
     if (!group.current) return
     const t = (clock.elapsedTime * speed + phase) % 1
-    const nextT = (t + 0.012) % 1
 
     const pos = curve.getPointAt(t)
-    const look = curve.getPointAt(nextT)
+    // Face along path tangent (stable forward motion — avoids stern-pivot spinning)
+    const tangent = curve.getTangentAt(t).normalize()
+    lookTarget.copy(pos).addScaledVector(tangent, Math.max(lookAhead * 40, 0.35))
     pos.y += Math.sin(clock.elapsedTime * 1.4 + phase * 10) * bobAmount
 
     group.current.position.copy(pos)
-    lookTarget.copy(look)
     if (lockHorizon) {
       lookTarget.y = pos.y
     }

@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import DescentCamera from './DescentCamera'
 import DescentLighting from './DescentLighting'
 import CursorFlashlight from './effects/CursorFlashlight'
+import SubmarineHeadlight from './effects/SubmarineHeadlight'
 import EpipelagicZone from './zones/EpipelagicZone'
 import MesopelagicZone from './zones/MesopelagicZone'
 import BathypelagicZone from './zones/BathypelagicZone'
@@ -26,6 +27,7 @@ export default function DescentScene() {
       <DescentCamera />
       <DescentLighting />
       <CursorFlashlight />
+      <SubmarineHeadlight />
 
       <Suspense fallback={null}>
         <EpipelagicZone />

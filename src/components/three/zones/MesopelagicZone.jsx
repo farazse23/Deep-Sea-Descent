@@ -8,7 +8,6 @@ import { openJellyfishModalFromCanvas } from '../../modals/JellyfishModalBridge'
 import whaleUrl from '../../../assets/models/zone-mesopelagic/blue-whale-optimized.glb?url'
 import jellyfishUrl from '../../../assets/models/zone-mesopelagic/glowing-jellyfish-optimized.glb?url'
 import glowingFishUrl from '../../../assets/models/zone-mesopelagic/glowing-fish-optimized.glb?url'
-import submarineUrl from '../../../assets/models/zone-epipelagic/submarine.glb?url'
 
 export const MESOPELAGIC_Y = -8.5
 
@@ -38,8 +37,6 @@ const FISH_PATH = [
   [2.0, 2.0, 2.35],
 ]
 
-const SUBMARINE_SCALE = 2.4
-/** Manual whale scale — Resize was turning it into a black ball. */
 const WHALE_SCALE = 0.35
 
 /**
@@ -56,10 +53,6 @@ export default function MesopelagicZone() {
         distance={16}
         decay={2}
       />
-
-      <Suspense fallback={null}>
-        <StaticSubmarine />
-      </Suspense>
 
       <Suspense fallback={null}>
         <SwimPath
@@ -179,46 +172,6 @@ function ManualWhale() {
   )
 }
 
-function StaticSubmarine() {
-  const { scene } = useGLTF(submarineUrl)
-  const clone = useMemo(() => {
-    try {
-      return SkeletonUtils.clone(scene)
-    } catch {
-      return scene.clone(true)
-    }
-  }, [scene])
-
-  useEffect(() => {
-    clone.traverse((child) => {
-      if (!child.isMesh) return
-      child.frustumCulled = false
-      if (child.material) {
-        child.material = Array.isArray(child.material)
-          ? child.material.map((m) => m.clone())
-          : child.material.clone()
-      }
-    })
-  }, [clone])
-
-  return (
-    <group
-      position={[0, 0.15, 3.4]}
-      rotation={[0, Math.PI / 2, 0]}
-      scale={SUBMARINE_SCALE}
-    >
-      <primitive object={clone} />
-      <pointLight
-        color="#cbd5e1"
-        intensity={1.8}
-        distance={6}
-        decay={2}
-        position={[0, 0.4, 0]}
-      />
-    </group>
-  )
-}
-
 function ClickableJellyfish() {
   const [selected, setSelected] = useState(false)
 
@@ -249,7 +202,6 @@ function ClickableJellyfish() {
   )
 }
 
-useGLTF.preload(submarineUrl)
 useGLTF.preload(whaleUrl)
 useGLTF.preload(jellyfishUrl)
 useGLTF.preload(glowingFishUrl)
